@@ -136,6 +136,7 @@ async def classify_post(
                 return {
                     "ID": row["ID"],
                     "Link": row["Link"],
+                    "Post Content": row["Post Content"],
                     "Classification": result.classification,
                     "Reasoning": result.reasoning,
                     "Error": "",
@@ -150,6 +151,7 @@ async def classify_post(
                 return {
                     "ID": row["ID"],
                     "Link": row["Link"],
+                    "Post Content": row["Post Content"],
                     "Classification": "",
                     "Reasoning": "",
                     "Error": str(exc),
@@ -158,6 +160,7 @@ async def classify_post(
         return {
             "ID": row["ID"],
             "Link": row["Link"],
+            "Post Content": row["Post Content"],
             "Classification": "",
             "Reasoning": "",
             "Error": f"Failed after {MAX_RETRIES} attempts: {last_exc}",
@@ -177,7 +180,7 @@ async def run_model(model: str, rows: list[dict], timestamp: str) -> None:
 
     with open(out_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
-            f, fieldnames=["ID", "Link", "Classification", "Reasoning", "Error"]
+            f, fieldnames=["ID", "Link", "Post Content", "Classification", "Reasoning", "Error"]
         )
         writer.writeheader()
         writer.writerows(results)
