@@ -37,7 +37,45 @@ Posts were excluded if they:
 ## Setup
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv relationship_venv
+source relationship_venv/bin/activate
 pip install -r requirements.txt
 ```
+
+## Running the Benchmark
+
+Create a `.env` file in the project root with your API keys:
+
+```
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+GEMINI_API_KEY=...
+```
+
+Then activate the virtual environment:
+
+```bash
+source relationship_venv/bin/activate
+```
+
+**Smoke test — a few posts, Gemini models only:**
+```bash
+python classify.py --models gemini/gemini-3.1-pro-preview,gemini/gemini-3.1-flash-lite-preview --limit 3
+```
+
+**Full dataset, Gemini models only:**
+```bash
+python classify.py --models gemini/gemini-3.1-pro-preview,gemini/gemini-3.1-flash-lite-preview
+```
+
+**Full dataset, all configured models:**
+```bash
+python classify.py
+```
+
+**Fix error rows in an existing results CSV without re-running the whole set:**
+```bash
+python classify.py --retry-errors results/claude-haiku-4-5-20251001/20260413_001551.csv --models claude-haiku-4-5-20251001
+```
+
+Results are saved to `results/<model_name>/<timestamp>.csv`.
