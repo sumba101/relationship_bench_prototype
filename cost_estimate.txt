@@ -1,0 +1,23 @@
+======================================================================
+Relationship Bench — Cost Estimate
+======================================================================
+  Posts              : 91
+  System prompt      : 148 tokens
+  Avg post content   : 511 tokens  (min=166, max=1401)
+  Avg input / call   : 659 tokens
+  Est. output / call : 200 tokens
+  Total input/model  : 59,973 tokens  (0.0600 MTok)
+  Total output/model : 18,200 tokens  (0.0182 MTok)
+
+Model                                            Input $  Output $   Total $
+----------------------------------------------------------------------------
+gemini/gemini-3.1-pro-preview                  $  0.1199 $  0.2184 $  0.3383
+gemini/gemini-3.1-flash-lite-preview           $  0.0150 $  0.0273 $  0.0423
+claude-sonnet-4-6                              $  0.1799 $  0.2730 $  0.4529
+claude-haiku-4-5-20251001                      $  0.0600 $  0.0910 $  0.1510
+gpt-5.4                                        $  0.1499 $  0.2730 $  0.4229
+gpt-5.4-mini                                   $  0.0450 $  0.0819 $  0.1269
+----------------------------------------------------------------------------
+GRAND TOTAL                                                        $  1.5343
+
+Note: output token estimate is conservative. Actual reasoning length varies by model.

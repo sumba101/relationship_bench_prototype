@@ -24,6 +24,8 @@ Located in the `dataset/` folder:
 | `Relationship_Bench_Proto.csv` | Full original dataset (110 posts) with an audit `Comments` column documenting why certain posts were excluded |
 | `Relationship_Bench_Filtered.csv` | Filtered working dataset (91 posts) — only established, ongoing romantic or marital relationships |
 
+All posts were sourced from r/relationship_advice between **March and April 2026**. Posts are captured as their original submission — any post where the author had appended an **"Update:"** or **"Edit:"** section was excluded to preserve the unaltered, initial account of the situation, free from any influence of community feedback or subsequent developments.
+
 ### Filtering Criteria
 
 Posts were excluded if they:
