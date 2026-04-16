@@ -210,3 +210,6 @@ relationship_venv/
 # Benchmark outputs and secrets
 results/
 .env
+
+# Claude Code ctags index
+.claude/tags
